@@ -1,0 +1,151 @@
+:root {
+  --primaryClr: green;
+  --secondary: lightGreen;
+  --trClr: rgb(246, 185, 70);
+}
+
+body {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(var(--trClr), var(--primaryClr));
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  background: grey;
+  width: 400px;
+
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+
+  display: grid;
+  gap: 1rem;
+
+  grid-template-areas:
+    "display display display display"
+    "ac c per divide"
+    "b9 b8 b7 x"
+    "b4 b5 b6 minus"
+    "b1 b2 b3 plus"
+    "b0 dot equals equals";
+}
+
+.calculator > div {
+  height: 50px;
+  background: var(--primaryClr);
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.calculator > div:hover {
+  cursor: pointer;
+  background: var(--secondary);
+  transition: all 1s;
+}
+.display {
+  grid-area: display;
+  display: grid;
+  justify-content: flex-end !important;
+  padding-right: 1rem;
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-family: "VT323", monospace;
+}
+.display:hover {
+  background: var(--primaryClr) !important;
+}
+.btn-ac {
+  grid-area: ac;
+}
+.btn-c {
+  grid-area: c;
+}
+.btn-a {
+  grid-area: a;
+}
+.btn-per {
+  grid-area: per;
+}
+.btn-divide {
+  grid-area: divide;
+}
+.btn-7 {
+  grid-area: b7;
+}
+.btn-8 {
+  grid-area: b8;
+}
+.btn-9 {
+  grid-area: b9;
+}
+.btn-x {
+  grid-area: x;
+}
+.btn-4 {
+  grid-area: b4;
+}
+.btn-5 {
+  grid-area: b5;
+}
+.btn-6 {
+  grid-area: b6;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-1 {
+  grid-area: b1;
+}
+.btn-2 {
+  grid-area: b2;
+}
+.btn-3 {
+  grid-area: b3;
+}
+.btn-plus {
+  grid-area: plus;
+}
+.btn-0 {
+  grid-area: b0;
+}
+.btn-dot {
+  grid-area: dot;
+}
+.btn-equals {
+  grid-area: equals;
+}
+
+.calculator .prank {
+  background: red;
+  color: white;
+
+  animation: shake 0.5s ease-in;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
